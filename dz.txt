@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Ввод коллисество элементов массива
+            Console.Write("Введите элементы через пробел:");
+
+            double[] myArray = Console.ReadLine().Split().Select(double.Parse).ToArray();
+            double[] myArray2 = new double[myArray.Length];
+
+            Array.Copy(myArray, myArray2, myArray.Length);
+
+            // Сортировка пузырьком
+            for (int i = 0; i < myArray2.Length; i++)
+            {
+                for (int j = 0; j < myArray2.Length - i - 1; j++)
+                {
+                    if (myArray2[j] > myArray2[j + 1])
+                    {
+                        double k = myArray2[j];
+                        myArray2[j] = myArray2[j + 1];
+                        myArray2[j + 1] = k;
+                    }
+                }
+            }
+
+            // Вывод отсортированного массива
+            Console.WriteLine("\nВывод отсортерованного массива:");
+
+            for (int i = 0; i < myArray2.Length; i++)
+            {
+                Console.WriteLine($"Элемент [{i}] = {myArray2[i]}");
+            }
+
+            // Ввод х
+            Console.Write("\nВведите х:\t");
+            double x = double.Parse(Console.ReadLine());
+
+            // Вывод чётных и чётных эллементов массива
+            Console.WriteLine("\nВывод чётных элементов массива, которые больше х:");
+
+            for (int i = 0; i < myArray2.Length; i++)
+            {
+                if (myArray2[i] > x)
+                {
+                    if (myArray[i] % 2 == 0)
+                    {
+                        Console.WriteLine((double)myArray[i]);
+                    }
+                }
+            }
+
+            // Вывод чётных и нечётных эллементов массива
+            Console.WriteLine("\nВывод чётных элементов массива, которые больше х:");
+
+            for (int i = 0; i < myArray2.Length; i++)
+            {
+                if (myArray2[i] > x)
+                {
+                    if (myArray2[i] % 2 != 0)
+                    {
+                        Console.WriteLine((double)myArray2[i]);
+                    }
+                }
+            }
+        }
+    }
+}
