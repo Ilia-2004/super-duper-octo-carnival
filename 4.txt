@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите свои оценки через запятую: ");
+
+            string evaluations = Console.ReadLine();
+
+            if (evaluations.Contains('1'))
+            {
+                Console.WriteLine("Оооо, ну ты попал...");
+            }
+
+            else if (evaluations.Contains('2')) 
+            {
+                Console.WriteLine("Ну что, студент, пора долг Родине отдать");
+            } 
+            
+            else if (evaluations.Contains('3'))
+            {
+                Console.WriteLine("Прощай стипендия");
+            } 
+            
+            else if (evaluations.Contains('4'))
+            {
+                Console.WriteLine("Живи пока, через полгода увидимся");
+            } 
+            
+            else
+            {
+                Console.WriteLine("О, отличник появился! На олимпиаду пойдешь");
+            }
+        }
+    }
+}

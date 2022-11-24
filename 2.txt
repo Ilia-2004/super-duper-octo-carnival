@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите 5 элементов двух массивов:");
+
+            Console.Write("Массив 1: ");
+            int[] a = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            Console.Write("Массив 2: ");
+            int[] b = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            int n = 0; 
+
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    if (a[i] == b[j])
+                    {
+                        n++;
+                    }
+                }
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine(string.Format("Совпадение {0} элементов", n));
+        }
+    }
+}
