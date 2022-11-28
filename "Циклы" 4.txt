@@ -27,8 +27,8 @@ namespace ConsoleApp1
 
                 min++;
 
-                hourAngle = 0.5f * (hours * 60 + min);
-                minAngle = 6 * min;
+                hourAngle = 0.5f * (hours * 60 + min); // расчёт угла часовой стрелки
+                minAngle = 6 * min; // расчёт угла минутной стрелки
 
                 angle = Math.Abs(hourAngle - minAngle);
                 angle = Math.Min(angle, 360 - angle);
