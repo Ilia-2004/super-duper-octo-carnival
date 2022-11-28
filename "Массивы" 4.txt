@@ -10,33 +10,33 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите свои оценки через запятую: ");
+            Console.Write("Введите свои оценки: ");
 
-            string evaluations = Console.ReadLine();
+            int[] evaluations = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
-            if (evaluations.Contains('1'))
+            if (evaluations.Contains(1))
             {
-                Console.WriteLine("Оооо, ну ты попал...");
+                Console.WriteLine("\nОооо, ну ты попал...\n");
             }
 
-            else if (evaluations.Contains('2')) 
+            else if (evaluations.Contains(2))
             {
-                Console.WriteLine("Ну что, студент, пора долг Родине отдать");
-            } 
-            
-            else if (evaluations.Contains('3'))
+                Console.WriteLine("\nНу что, студент, пора долг Родине отдать\n");
+            }
+
+            else if (evaluations.Contains(3))
             {
-                Console.WriteLine("Прощай стипендия");
-            } 
-            
-            else if (evaluations.Contains('4'))
+                Console.WriteLine("\nПрощай стипендия\n");
+            }
+
+            else if (evaluations.Contains(4))
             {
-                Console.WriteLine("Живи пока, через полгода увидимся");
-            } 
-            
+                Console.WriteLine("\nЖиви пока, через полгода увидимся\n");
+            }
+
             else
             {
-                Console.WriteLine("О, отличник появился! На олимпиаду пойдешь");
+                Console.WriteLine("\nО, отличник появился! На олимпиаду пойдешь\n");
             }
         }
     }
