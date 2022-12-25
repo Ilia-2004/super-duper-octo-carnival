@@ -32,6 +32,9 @@ public class MainClass
 
         // Функция вывода
         public void Print() { Console.WriteLine($"{a}, {b}, {c}"); }
+        
+        // Деструктор
+        ~Watch() { }
     }
     public static void Main()
     {
