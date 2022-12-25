@@ -1,0 +1,51 @@
+using System;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        public class Tree
+        {
+            private int value;
+            private string type_tree;
+
+
+            // Конструктор по умолчанию
+            public Tree()
+            {
+                value = 0;
+                type_tree = string.Empty;
+            }
+
+            // Конструктор с параметрами
+            public Tree(string type_tree, int value)
+            {
+                this.value = value;
+                this.type_tree = type_tree;
+            }
+
+            // Конструктор копирования
+            public Tree(Tree x)
+            {
+                value = x.value;
+                type_tree = x.type_tree;
+            }
+
+            // Вывод
+            public void Print() { Console.WriteLine($"{type_tree}, {value}"); }
+
+            // Дестрктор
+            ~Tree() { }
+        }
+
+
+        public static void Main()
+        {
+            var tree1 = new Tree("сосна", -6);
+            var tree2 = new Tree("береза", 80);
+
+            tree1.Print();
+            tree2.Print();
+        }
+    }
+}
