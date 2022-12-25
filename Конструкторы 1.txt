@@ -1,45 +1,48 @@
 using System;
 
-public class MainClass
+namespace ConsoleApp3
 {
-    public class Watch
+    class Program
     {
-        private string a, b;
-        private decimal c;
-
-        // Конструктор по умолчанию
-        public Watch()
+        public class Watch
         {
-            c = 0;
-            a = b = string.Empty;            
-        }
+            private string a, b;
+            private decimal c;
 
-        // Конструктор с параметрами
-        public Watch(string a, string b, decimal c)
-        {
-            this.a = a;
-            this.b = b;
-            this.c = c;
-        }
+            // Конструктор по умолчанию
+            public Watch()
+            {
+                c = 0;
+                a = b = string.Empty;            
+            }
 
-        // Конструктор копирования
-        public Watch(Watch x) 
-        {
-            a = x.a;
-            b = x.b; 
-            c = x.c;
-        }
+            // Конструктор с параметрами
+            public Watch(string a, string b, decimal c)
+            {
+                this.a = a;
+                this.b = b;
+                this.c = c;
+            }
 
-        // Функция вывода
-        public void Print() { Console.WriteLine($"{a}, {b}, {c}"); }
+            // Конструктор копирования
+            public Watch(Watch x) 
+            {
+                a = x.a;
+                b = x.b; 
+                c = x.c;
+            }
+
+            // Функция вывода
+            public void Print() { Console.WriteLine($"{a}, {b}, {c}"); }
         
-        // Деструктор
-        ~Watch() { }
-    }
-    public static void Main()
-    {
-        var myWatch = new Watch("Casio", "electronic", 15.99M);
-        
-        myWatch.Print();
+            // Деструктор
+            ~Watch() { }
+        }
+        public static void Main()
+        {
+            var myWatch = new Watch("Casio", "electronic", 15.99M);
+             
+            myWatch.Print();
+        }
     }
 }
