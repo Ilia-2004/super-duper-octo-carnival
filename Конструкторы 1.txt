@@ -1,0 +1,41 @@
+using System;
+
+public class MainClass
+{
+    public class Watch
+    {
+        private string a, b;
+        private decimal c;
+
+        // Конструктор по умолчанию
+        public Watch()
+        {
+            c = 0;
+            a = b = string.Empty;            
+        }
+
+        // Конструктор с параметрами
+        public Watch(string a, string b, decimal c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+
+        // Конструктор копирования
+        public Watch(Watch x) 
+        {
+            a = x.a;
+            b = x.b; 
+            c = x.c;
+        }
+
+        // Функция вывода
+        public void Print() { Console.WriteLine($"{a}, {b}, {c}"); }
+    }
+    public static void Main()
+    {
+        var myWatch = new Watch("Casio", "electronic", 15.99M);
+        myWatch.Print();
+    }
+}
