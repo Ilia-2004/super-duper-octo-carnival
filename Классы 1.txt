@@ -1,0 +1,53 @@
+using System;
+
+namespace ConsoleApp3
+{
+    // class Warker
+    class Worker
+    {
+        string surname = "", name = "";
+        int rate = 0, days = 0;
+
+        // entering variables
+        public void Insert()
+        {
+            Console.Write("Введите имя: ");
+            name = Console.ReadLine();
+
+            Console.Write("Введите фамилию: ");
+            surname = Console.ReadLine();
+
+            Console.Write("Введите ставку: ");
+            rate = int.Parse(Console.ReadLine());
+
+            Console.Write("Введите кол-во отработанных дней: ");
+            days = int.Parse(Console.ReadLine());
+        }
+
+        // output of the first and last name
+        public void GetFullName() { Console.WriteLine($"{surname} {name}"); }
+
+        // salary withdrawal
+        public int GetSalary()
+        {
+            Console.WriteLine($"Зарплата: {rate * days}");
+
+            return (rate * days);
+        }
+    }
+
+    // main class
+    class Program
+    {
+        static void Main()
+        {
+            Worker value = new Worker();
+
+            value.Insert();
+            value.GetFullName();
+            value.GetSalary();
+
+            Console.WriteLine();
+        }
+    }
+}

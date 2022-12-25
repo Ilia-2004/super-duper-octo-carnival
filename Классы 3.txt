@@ -1,0 +1,78 @@
+using System;
+
+namespace ConsoleApp3
+{
+    // class Point
+    class Point
+    {
+        double x = 0, y = 0, z = 0;
+
+        // ввод координатов
+        public void enentering_coordinates()
+        {
+            Console.Write("Введите x: ");
+            x = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите y: ");
+            y = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите z: ");
+            z = double.Parse(Console.ReadLine());
+
+       
+            Console.Write("Муха или паук? ");
+            string str = Console.ReadLine();
+
+            if (str == "муха")
+            {
+                while(z != 0)
+                {
+                    if (z != 0)
+                    {
+                        Console.WriteLine("[ERROR] Муха не на полу!");
+                        Console.Write("Введите z: ");
+                        z = double.Parse(Console.ReadLine());
+                    }
+                }
+            }  
+        }
+
+        public double Line(Point a)
+        {
+            double value = Math.Round(Math.Sqrt(Math.Pow(Math.Abs(a.x - x), 2)
+                           + Math.Pow(Math.Abs(a.y - y), 2) + Math.Pow(Math.Abs(a.z - z), 2)), 5);
+
+            Console.WriteLine($"Расстояние по прямой: {value}");
+
+            return value;
+        }
+
+        public double Not_line(Point a)
+        {
+            double value = Math.Round(Math.Sqrt(Math.Pow(Math.Abs(a.x - x), 2) 
+                           + Math.Pow(Math.Abs(a.y - y), 2)) + Math.Abs(a.z - z), 5);
+
+            Console.WriteLine($"Путь, который необходимо пройти пауку до мухи: {value}");
+
+            return value;
+        }
+    }
+
+    // main class
+    class Program
+    {
+        static void Main()
+        {
+            Point x1 = new Point();
+            Point x2 = new Point();
+
+            x1.enentering_coordinates();
+            x2.enentering_coordinates();
+
+            x1.Not_line(x2);
+            x1.Line(x2);
+
+            Console.WriteLine();
+        }
+    }
+}

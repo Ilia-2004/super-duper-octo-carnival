@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.Write("Введите числа через пробел: ");
+            string[] str = Console.ReadLine().Split();
+
+            List<string> List = new List<string>();
+            List<int> List1 = new List<int>();
+
+            for (int i = 0; i < str.Length; i++) { List.Add(str[i]); }
+
+            int n1 = List.IndexOf("0") + 1;
+            int n2 = List.LastIndexOf("0") - 1;
+
+            for (var A = n1; A <= n2; A++)
+            {
+                int a = int.Parse(List[A]);
+                List1.Add(a);
+            }
+
+            List1.Sort((x, y) => y.CompareTo(x));
+
+            foreach (int i in List1) { Console.Write(i + " "); }
+
+            Console.WriteLine();
+        }
+    }
+}

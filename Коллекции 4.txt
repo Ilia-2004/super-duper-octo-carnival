@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static List<int> syracuse_sequences()
+        {
+            int value = int.Parse(Console.ReadLine());
+            List<int> List = new List<int>();
+
+            List.Add(value);
+
+            while (value != 1)
+            {
+                if (value % 2 == 0) { value /= 2; }
+                else { value = value * 3 + 1; }
+
+                List.Add(value);
+            }
+            return List;
+        }
+        static void Main()
+        {
+            Console.Write("Введите нулевой элемент: ");
+
+            List<int> List = syracuse_sequences();
+
+            foreach (int i in List) { Console.Write(i + " "); }
+
+            Console.WriteLine();
+        }
+
+    }
+}
